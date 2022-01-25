@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>환경부</title>
+    <!-- 파비콘 설정 -->
+    <link rel="shortcut icon" href="./ico/favicon.ico">
+    <link rel="apple-touch-icon" href="./ico/favicon.ico" sizes="16x16">
+    <!-- 메타포 설정 -->
+    <meta name="Author" content="환경부">
+    <meta name="Keywords" content="환경부">
+    <meta name="Description" content="환경부">
+    <link rel="canonical" href="http://www.me.go.kr/home/web/main.do" />
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:url" content="www.Ulleung-travel.kr">
+    <meta property="og:site_name" content="환경부">
+    <meta property="og:locale" content="서울시">
+    <meta property="og:title" content="project4">
+    <meta property="og:description" content="환경부 정책홍보">
+    <meta property="og:country-name" content="TheJoeun.co">
+    <!-- 폰트 로딩 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- 필수 API 설정 -->
+    <script src="./js/jquery-latest.js"></script>
+    <script src="./js/jquery.bxslider.min.js"></script>
+    <!-- 외부 스타일 로딩-->
+    <!-- <link rel="stylesheet"href="./css/reset2.css"> -->
+    <!-- <link rel="stylesheet"href="./css/normalize.css"> -->
+    <link rel="stylesheet" href="./css/jquery.bxslider.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- google 애널리틱스 연결 -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216606852-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-216606852-1');
+    </script>
+<style>
+    /*figure_vs*/
+    .figure_vs {margin:0 auto; }
+    .img_box {width:500%; margin-top:10px; overflow-x: hidden; position:relative;}
+    .img_box li {position:relative; float:left; }
+    .btn_box1 {position:absolute;}
+    .btn_box2 {position:absolute;}
+
+    .vs_btn_prev {text-indent:-10000px;}
+    .vs_btn_next {text-indent:-10000px;}
+    /*ico_menu*/
+    .ico_menu {width:100%;}
+    .ico_list {margin-top:20px; width:100%; height:10vw;}
+    .ico_list li {float:left; padding-left:130px;} 
+    /*sub_slide*/
+    .sub_slide {clear: both; }
+    .sub_img_box {width:500%; overflow-x: hidden;}
+    .sub_img_box li {float:left;}
+    /*informal_box*/
+    .ra_item { display:none; }
+    .menubar { clear:both; }
+    .menubar {  width: 400px; height: 200px; }
+    #ra1:checked ~ .menubar .noti.item1 { display:block; }
+    #ra2:checked ~ .menubar .noti.item2 { display:block; }
+    .informal_box {width:100%; height:20vw; padding-top:50px;}
+    .inform {float:left; margin-left:150px;}
+    .inform_category_menu li { float:left; width: 100px; text-align: center; height: 48px; line-height: 48px;
+     cursor: pointer; }
+    .inform_category_menu li.more_item { float:right;  font-size:14px; font-weight: bold;  }
+    .inform_category_menu li label { color:#000; font-weight: normal; cursor: pointer; }
+    .inform_menu {width:400px;}
+
+    .board_tit li {float:left;}
+    /*multiple_content*/
+    .multiple_content {width: 1200px; height:100px; margin: 0 auto; position: relative;}
+    .sns_bar {position:relative; float:left; margin:5px 5px; width:40%; height:100%;}
+    .sns_logo li {float:left; margin-left:40px; margin-top:25px;}
+    .linklist {position:relative; float:left; margin:5px 5px; width:55%; height:100%;}
+    .national {float:left; margin-left:40px; margin-top:5px;}
+    .national img {margin-top:10px; float:left;}
+    .national a {margin-top:15px; display:block; background-color:rgb(248, 241, 243); height:50px; width:250px; font-size:20px;
+        margin-left: 20px; text-align:center; color:black; text-indent:-10px; line-height:45px;}
+    .ref_cite_list {margin-top:20px; float:right; }
+    .ref_cite_list_opt { height: 50px; width:250px; text-indent:10px; font-size:20px;}
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="hd">
+            <div class="hd_wrap">
+                <a href="" class="logo"><img src="./img/logo.png" alt=""></a>
+                <div class="topsearch">
+                    <form action="${path }/search/find.do">
+                        <input type="text" name="Keyword" placeholder="미세먼지 저감대책" class="search_box">
+                        <button type="submit" class="search_box_input"><img src="./ico/ico_gnb_search.png" alt="검색"></button>
+                    </form>
+                </div>
+                <div class="lang">
+                    <ul>
+                        <li><a href=""><img src="./ico/eng.jpg" alt=""></a></li>
+                        <li>English</li>
+                        <li><a href=""><img src="./ico/chi.jpg" alt=""></a></li>
+                        <li>Chinese</li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="gnb">
+                <div class="gnb_wrap">
+                    <ul class="grade1" id="first">
+                        <li>
+                            <a href="">정보공개</a>
+                            <ul class="grade2">
+                                <li>
+                                    <a href="">공공데이터개방</a>
+                                    <ul class="grade3">
+                                        <li><a href="">담당자안내</a></li>
+                                        <li><a href="">개방현황</a></li>
+                                        <li><a href="">개방신청</a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">감사/청렴마당</a>
+                                    <ul class="grade3">
+                                        <li><a href="">감사/청렴마당</a></li>
+                                        <li><a href="">감사/청렴활동 관련 규정</a></li>
+                                        <li><a href="">반부패 청렴 플랫폼</a></li>
+                                        <li><a href="">부패행위자 현황공개</a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">사회적협동조합 경영공시</a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">소비자환경정보</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">적극행정</a>
+                                    <ul class="grade3">
+                                        <li><a href="">제도소개</a></li>
+                                        <li><a href="">적극행정 국민추천</a></li>
+                                        <li><a href="">소극행정신고</a></li>
+                                        <li><a href="">적극행정자료실</a></li>
+                                        <li><a href="">적극행정 우수공무원</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">국민소통</a>
+                            <ul class="grade2">
+                                <li>
+                                    <a href="">클린신고센터</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">민원신청</a>
+                                    <ul class="grade3">
+                                        <li><a href="">부조리/공익침해/불친절신고</a></li>
+                                        <li><a href="">밀렵/밀거래신고</a></li>
+                                        <li><a href="">습지보호지역 위해신고</a></li>
+                                        <li><a href="">환경신문고</a></li>
+                                        <li><a href="">예산낭비신고</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">규제개혁</a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">국민참여</a>
+                                    <ul class="grade3">
+                                        <li><a href="">장관과의 대화</a></li>
+                                        <li><a href="">국민제안</a></li>
+                                        <li><a href="">칭찬합시다</a></li>
+                                        <li><a href="">설문조사</a></li>
+                                        <li><a href="">정책토론</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">110화상/수화/채팅상담</a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">법령/정책</a>
+                            <ul class="grade2">
+                                <li>
+                                    <a href="">환경법령</a>
+                                    <ul class="grade3">
+                                        <li><a href="">현행법령</a></li>
+                                        <li><a href="">최근제/개정법령</a></li>
+                                        <li><a href="">입법/행정예고</a></li>
+                                        <li><a href="">고시/훈령/예규</a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">환경정책</a>
+                                    <ul class="grade3">
+                                        <li><a href="">환경정책일반</a></li>
+                                        <li><a href="">환경보건</a></li>
+                                        <li><a href="">기후대기</a></li>
+                                        <li><a href="">물환경관리</a></li>
+                                        <li><a href="">상하수도</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">국회관련정보</a>
+                                    <ul class="grade3">
+                                        <li><a href="">주요정책자료</a></li>
+                                        <li><a href="">예산</a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">정책이슈</a>
+                                    <ul class="grade3">
+                                        <li><a href="">풍력발전 환경영향평가</a></li>
+                                        <li><a href="">녹조대응 정보방</a></li>
+                                        <li><a href="">온실가스 배출권거래제</a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href=""></a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">발행물</a>
+                            <ul class="grade2">
+                                <li>
+                                    <a href="">소책자</a>
+                                    <ul class="grade3">
+                                        <li><a href="">알기쉬운 소책자</a></li>
+                                        <li><a href="">주제별</a></li>
+                                        <li><a href="">연도별</a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">환경 간행물</a>
+                                    <ul class="grade3">
+                                        <li><a href="">전체검색</a></li>
+                                        <li><a href="">환경통계연감</a></li>
+                                        <li><a href="">환경백서</a></li>
+                                        <li><a href="">대기환경월보</a></li>
+                                        <li><a href="">폐기물통계</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">환경동화</a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">환경 웹진</a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">e-book</a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">알림/홍보</a>
+                            <ul class="grade2">
+                                <li>
+                                    <a href="">뉴스/공지</a>
+                                    <ul class="grade3">
+                                        <li><a href="">공지/공고</a></li>
+                                        <li><a href="">보도/설명</a></li>
+                                        <li><a href="">채용공고</a></li>
+                                        <li><a href="">인사동정</a></li>
+                                        <li><a href="">입찰안내</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">홍보자료</a>
+                                    <ul class="grade3">
+                                        <li><a href="">그림자료</a></li>
+                                        <li><a href="">영상자료</a></li>
+                                        <li><a href="">자료관</a></li>
+                                        <li><a href="">지구의 초상</a></li>
+                                        <li><a href="">환경부(發) 뉴스</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href=""></a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href=""></a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href=""></a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">기관소개</a>
+                            <ul class="grade2">
+                                <li>
+                                    <a href="">인사말</a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">일반현황</a>
+                                    <ul class="grade3">
+                                        <li><a href="">비전</a></li>
+                                        <li><a href="">연혁</a></li>
+                                        <li><a href="">상징(MI)소개</a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">조직/직원 안내</a>
+                                    <ul class="grade3">
+                                        <li><a href="">본부</a></li>
+                                        <li><a href="">외청</a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">안내</a>
+                                    <ul class="grade3">
+                                        <li><a href="">찾아오시는 길</a></li>
+                                        <li><a href="">층별안내</a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href=""></a>
+                                    <ul class="grade3">
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                        <li><a href=""></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">품질/서비스</a>
+                            <ul class="grade2">
+                                <li>
+                                    <a href="">2차의1</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">2차의2</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">2차의3</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">2차의4</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">2차의5</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">사이트맵</a>
+                            <ul class="grade2">
+                                <li>
+                                    <a href="">2차의1</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">2차의2</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">2차의3</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">2차의4</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">2차의5</a>
+                                    <ul class="grade3">
+                                        <li><a href="">3차의1</a></li>
+                                        <li><a href="">3차의2</a></li>
+                                        <li><a href="">3차의3</a></li>
+                                        <li><a href="">3차의4</a></li>
+                                        <li><a href="">3차의5</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>           
+        </header>
+        <div class="content">
+            <div class="content_wrap">
+                <div class="figure_vs">
+                    <ul class="img_box">
+                        <li>
+                            <a href="">
+                                <img src="./img/bg_main_visual.jpg" class="vs_img" alt="메인이미지1">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/bg_main_visual.jpg" class="vs_img" alt="메인이미지1">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/bg_main_visual.jpg" class="vs_img" alt="메인이미지1">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/bg_main_visual.jpg" class="vs_img" alt="메인이미지1">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="btn_box1">
+                        <li><button class="vs_btn_prev">이전</button></li>
+                        <li><button class="vs_btn_next">다음</button></li>
+                    </ul>
+                    <ul class="btn_box2">
+                        <li><button class="btn1"></button></li>
+                        <li><button class="btn2"></button></li>
+                        <li><button class="btn3"></button></li>
+                        <li><button class="btn4"></button></li>
+                        <li><button class="play_btn"></button></li>
+                    </ul>
+                </div>
+                <div class="ico_menu">
+                    <ul class="ico_list">
+                        <li class="ico1">
+                            <div class="ico"><a href=""><img src="./ico/main_icon04.png" alt="소식지"></a></div>
+                            <div class="ico_desc">
+                                <a href="">
+                                    <p class="tit">소식지</p>
+                                    <p class="sub_tit">more &gt;</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="ico2">
+                            <div class="ico"><a href=""><img src="./ico/main_icon06.png" alt="조직도"></a></div>
+                            <div class="ico_desc">
+                                <a href="">
+                                    <p class="tit">조직도</p>
+                                    <p class="sub_tit">more &gt;</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="ico3">
+                            <div class="ico"><a href=""><img src="./ico/main_icon03.png" alt="부서찾기"></a></div>
+                            <div class="ico_desc">
+                                <a href="">
+                                    <p class="tit">부서찾기</p>
+                                    <p class="sub_tit">more &gt;</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="ico4">
+                            <div class="ico"><a href=""><img src="./ico/main_icon01.png" alt="찾아오시는 길"></a></div>
+                            <div class="ico_desc">
+                                <a href="">
+                                    <p class="tit">오시는길</p>
+                                    <p class="sub_tit">more &gt;</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="ico5">
+                            <div class="ico"><a href=""><img src="./ico/main_icon02.png" alt="질의응답"></a></div>
+                            <div class="ico_desc">
+                                <a href="">
+                                    <p class="tit">질의응답</p>
+                                    <p class="sub_tit">more &gt;</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="ico6">
+                            <div class="ico"><a href=""><img src="./ico/main_icon05.png" alt="예산안내"></a></div>
+                            <div class="ico_desc">
+                                <a href="">
+                                    <p class="tit">예산안내</p>
+                                    <p class="sub_tit">more &gt;</p>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sub_slide">
+                    <ul class="sub_img_box">
+                        <li>
+                            <a href="">
+                                <img src="./img/subslide1.png" alt="국민과 함께하는 적극행정">
+                                <div class="sub_img_tit">
+                                    <p class="sub_img_tit"></p>
+                                    <p class="sub_img_subtit"></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/subslide2.png" alt="한눈에 보는 민원 빅데이터">
+                                <div class="sub_img_tit">
+                                    <p class="sub_img_tit"></p>
+                                    <p class="sub_img_subtit"></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/subslide3.png" alt="녹색회복과 탄소중립">
+                                <div class="sub_img_tit">
+                                    <p class="sub_img_tit"></p>
+                                    <p class="sub_img_subtit"></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/subslide4.png" alt="수도용 자재 및 제품 인증취소 현황">
+                                <div class="sub_img_tit">
+                                    <p class="sub_img_tit"></p>
+                                    <p class="sub_img_subtit"></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/subslide5.png" alt="대한민국 2050 탄소중립">
+                                <div class="sub_img_tit">
+                                    <p class="sub_img_tit"></p>
+                                    <p class="sub_img_subtit"></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/subslide6.png" alt="우수환경산업체 15社">
+                                <div class="sub_img_tit">
+                                    <p class="sub_img_tit"></p>
+                                    <p class="sub_img_subtit"></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/subslide7.png" alt="환경부의 30년 계획">
+                                <div class="sub_img_tit">
+                                    <p class="sub_img_tit"></p>
+                                    <p class="sub_img_subtit"></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/subslide8.png" alt="탄소중립도시">
+                                <div class="sub_img_tit">
+                                    <p class="sub_img_tit"></p>
+                                    <p class="sub_img_subtit"></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/subslide9.png" alt="탄소중립 생활 실천 안내서">
+                                <div class="sub_img_tit">
+                                    <p class="sub_img_tit"></p>
+                                    <p class="sub_img_subtit"></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/subslide10.png" alt="2021 정보공개 종합평가 최우수기관 환경부">
+                                <div class="sub_img_tit">
+                                    <p class="sub_img_tit"></p>
+                                    <p class="sub_img_subtit"></p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="informal_box">
+                    <div class="inform">
+                        <div class="inform_menu">
+                            <input type="radio" name="ra1" class="ra_item" id="ra1" checked>
+                            <input type="radio" name="ra2" class="ra_item" id="ra2">
+                            <ul class="inform_category_menu">
+                                <li class="item1"><label for="ra1">공지사항</label></li>
+                                <li class="item2"><label for="ra2">채용정보</label></li>
+                                <li class="more_item"><a href="">더보기</a></li>
+                            </ul>
+                            <ul class="menubar">
+                                <li class="hide_menu" id="menubar_item1">
+                                    <ul class="board_tit">
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">야생동물 보호시설 운영방침</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">요소수 정보공개</a>
+                                            <span class="regdate">2021-02-11</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">영산강 물관리종합계획</a>
+                                            <span class="regdate">2021-11-03</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">세계 물의날 기념행사 공고안내</a>
+                                            <span class="regdate">2021-12-01</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="hide_menu" id="menubar_item2">
+                                    <ul class="board_tit">
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">환경부 기획재정담당관실 1명 채용 공고</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">물관리위원회 전문연구원 채용공고</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">환경부 기획재정담당실 채용 완료</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">자원재활용부 채용 공고</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="inform">
+                        <div class="inform_menu">
+                            <input type="radio" name="ra3" class="ra_item" id="ra3" checked>
+                            <input type="radio" name="ra4" class="ra_item" id="ra4">
+                            <ul class="inform_category_menu">
+                                <li class="item1"><label for="ra3">공지사항</label></li>
+                                <li class="item2"><label for="ra4">채용정보</label></li>
+                                <li class="more_item"><a href="">더보기</a></li>
+                            </ul>
+                            <ul class="menubar">
+                                <li class="hide_menu" id="menubar_item3">
+                                    <ul class="board_tit">
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">환경부 기획재정담당관실 1명 채용 공고</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">물관리위원회 전문연구원 채용공고</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">환경부 기획재정담당실 채용 완료</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">자원재활용부 채용 공고</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="hide_menu" id="menubar_item4">
+                                    <ul class="board_tit">
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">환경부 기획재정담당관실 1명 채용 공고</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">물관리위원회 전문연구원 채용공고</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">환경부 기획재정담당실 채용 완료</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                        <li>
+                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
+                                            <a href="">자원재활용부 채용 공고</a>
+                                            <span class="regdate">2021-01-04</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="info_box">
+                        <div class="info_box_menu">
+                            <ul class="info_box_menu_item">
+                                <li><img src="./ico/ico_inquick01.png" alt="전구"><a href="">오시는길</a></li>
+                                <li><img src="./ico/ico_inquick02.png" alt="연락처수첩"><a href="">담당자 연락처</a></li>
+                                <li><img src="./ico/ico_inquick05.png" alt="편지"><a href="">국민생각함</a></li>
+                            </ul>
+                        </div>
+                        <div class="call_img">
+                            <img src="./ico/ico_inquick03.png" alt="확성기">
+                            <p class="telephone">환경부핫라인</p>
+                            <p class="phonenum">1577-8866</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="multiple_content">
+                    <div class="sns_bar">
+                        <ul class="sns_logo">
+                            <li><a href=""><img src="./ico/ico_sns_blog.png" alt="환경부 네이버 블로그"></a></li>
+                            <li><a href=""><img src="./ico/ico_sns_facebook.png" alt="환경부 페이스북"></a></li>
+                            <li><a href=""><img src="./ico/ico_sns_twitter.png" alt="환경부 트위터"></a></li>
+                            <li><a href=""><img src="./ico/ico_sns_youtube.png" alt="환경부 유튜브"></a></li>
+                            <li><a href=""><img src="./ico/ico_sns_instagram.png" alt="환경부 인스타그램"></a></li>
+                        </ul>
+                    </div>
+                    <div class="linklist">
+                        <div class="national">
+                            <img src="./ico/ico_fourlink04.png" alt="지도 마커">
+                            <a href="">지역본부 홈페이지</a>
+                        </div>
+                        <div class="ref_cite_list">
+                            <select onchange="if(this.value) window.open(this.value);" name="fac" id="fac_select" class="ref_cite_list_opt">
+                                <option value="http://www.kwater.or.kr/">한국수자원공사</option>
+                                <option value="https://www.knps.or.kr/">국립공원공단</option>
+                                <option value="http://www.nie.re.kr/">국립생태원</option>
+                                <option value="http://www.keco.or.kr/">한국환경공단</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="ft">
+            <div class="ft_wrap">
+                <div class="ft_logo">
+                    <img src="./img/foot_logo.png" alt="환경부로고">
+                </div>
+                    <div class="ft_desc">           
+                        <ul class="downmenu">
+                            <li><a href="" style="color:rgb(49, 84, 236)">누리집 이용안내</a></li>
+                            <li><a href="">개인정보침해신고센터</a></li>
+                            <li><a href="">개인정보처리방침</a></li>
+                            <li><a href="">긴급상황 시 개인정보 처리 및 보호수칙</a></li>
+                            <li><a href="">저작권정책</a></li>
+                            <li><a href="">환경행정서비스현장</a></li>
+                        </ul>
+                    <div class="copyright">
+                        <p>
+                            - 본 누리집의 내용은 저작권법에 의해 보호를 받는 저작물로서, 
+                            이에 대한 무단 복제 및 배포를 금하며 누리집에 게재된 이메일 주소의 수집을 거부합니다.
+                            <br>이를 위반 시 관련법에 의해 처벌됨을 알려드립니다.
+                        </p>
+                        <p>
+                            - 누리집 저작권은 환경부에 있습니다.
+                        </p>
+                    </div>
+                </div>   
+                <div class="ft_wa">
+                    <img src="./img/WA.png" alt="WA인증마크">
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
