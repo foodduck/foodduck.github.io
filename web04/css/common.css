@@ -42,7 +42,8 @@ font-size:18px; padding-right: 28px; padding-left:36px; max-width:120px; }
 .gnb .gnb_wrap ul li .sub li .dep3 li a {color:black;}
 .gnb .gnb_wrap ul li .sub li .dep3 li:hover a { color: #1d4bb0; text-decoration: underline; }
 
-#awards {background-image: url("../img/awards_2.png"); background-repeat: no-repeat; }
+#awards {background-image: url("../img/awards_2.png"); background-repeat: no-repeat; background-position: left bottom;}
+
 
 /* content */
 .content {width: 100%; text-align: center;}
