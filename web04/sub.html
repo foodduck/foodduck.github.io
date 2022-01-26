@@ -5,6 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>환경부</title>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+      <script> 
+      //좌표 값을 바꿔서 입력 36.5060146670911, 127.262800050186
+      function initialize() {
+      var myLatlng = new google.maps.LatLng(36.5060146670911, 127.262800050186);
+      var mapOptions = {
+          zoom: 14,           //지도 확대 배율
+          center: myLatlng
+      }
+  
+      var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: '환경부'	  //레이블을 바꿔서 입력
+      });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+      </script>
     <!-- 파비콘 설정 -->
     <link rel="shortcut icon" href="./ico/favicon.ico">
     <link rel="apple-touch-icon" href="./ico/favicon.ico" sizes="16x16">
@@ -55,55 +74,60 @@
     </script>
 <style>
     /*figure_vs*/
-    .figure_vs {margin:0 auto; clear:both; width: 100%; position:relative; }
-    .img_box {width:400%; overflow-x: hidden; }
-    .img_box:after { content:""; display:block; clear:both; }
-    .img_box li {position:relative; float:left; z-index:1; width:25%;}
-    div.bx-controls.bx-has-controls-direction.bx-has-pager > div.bx-pager.bx-default-pager { bottom: 20px;}
+     /*figure img*/
+        .vs { clear:both; width: 100%; height: 400px; 
+        background-image:url("./img/visual_1.jpg"); 
+        background-repeat: no-repeat; background-position: center;}
+        .vs_tit {position: absolute; text-align: center; left:43vw; padding-top:100px;
+        font-size:20pt; font-weight: 600; font-family: 'nanum-Gothic'; color:white;}
+        .content_wrap { clear:both; width: 1200px; margin: 0 auto; margin-top:0px; }
+        .sub_tit { height: 160px; line-height: 144px; font-size:22px; 
+            background-color: #2e70b4; text-align:center; width: 190px; float:left; color:#fff; }
+        .sub_box {margin-top:-160px; }
+        .bread_box { height: 136px; background-color: #fff; width: 980px; float:right; 
+            padding-left: 30px; padding-top: 24px; position:relative; }
+        
+        .cate_tit { color:#999; font-size:24px; }
+        .bread { padding-top:24px; line-height: 1.6; font-size: 16px; }
+        
+        .leftbar {background-color: rgb(238, 215, 215); width:190px;}
+        .lnb li a {font-size:16px; }
+        .lnb li.act a {color:rgb(54, 76, 204); font-weight:600; font-size:24px; }
+        .page_wrap {margin-bottom: 20px;}
+        .page_box {clear:both; margin:10px auto;  min-width:30vh; position: relative; }
+        .page {padding-top: 0; overflow:auto; height: auto; min-height:50vh;}
     
-    /*ico_menu*/
-    .ico_menu {width:100%;}
-    .ico_list {margin:0 auto; width:80%; height:8vw; padding-top:20px;}
-    .ico_list li {float:left; padding-left:110px;}
-    .ico {text-align: center;}
-    .tit {font-size:20pt;}
-    .sub_tit {text-align:center;}
-    /*sub_slide*/
-    .sub_slide {clear: both; }
-    .sub_img_box {width:500%; overflow-x: hidden;}
-    .sub_img_box li {float:left; padding: 20px;}
-    /*informal_box*/
-    .ra_item { display:none; }
-    .menubar { clear:both; }
-    .menubar {  width: 400px; height: 200px; }
-    #ra1:checked ~ .menubar .noti.item1 { display:block; }
-    #ra2:checked ~ .menubar .noti.item2 { display:block; }
-    .informal_box {width:100%; height:20vw; padding-top:50px;}
-    .inform {float:left; margin-left:150px;}
-    .inform_category_menu li { float:left; width: 100px; text-align: center; height: 48px; line-height: 48px;
-     cursor: pointer; }
-    .inform_category_menu li.more_item { float:right;  font-size:14px; font-weight: bold;  }
-    .inform_category_menu li label { color:#000; font-weight: normal; cursor: pointer; }
-    .inform_menu {width:400px;}
-
-    .board_tit li {float:left;}
-    /*multiple_content*/
-    .multiple_content {width: 1200px; height:100px; margin: 0 auto; position: relative;}
-    .sns_bar {position:relative; float:left; margin:5px 5px; width:40%; height:100%;}
-    .sns_logo li {float:left; margin-left:40px; margin-top:25px;}
-    .linklist {position:relative; float:left; margin:5px 5px; width:55%; height:100%;}
-    .national {float:left; margin-left:40px; margin-top:5px;}
-    .national img {margin-top:10px; float:left;}
-    .national a {margin-top:15px; display:block; background-color:rgb(248, 241, 243); height:50px; width:250px; font-size:20px;
-        margin-left: 20px; text-align:center; color:black; text-indent:-10px; line-height:45px;}
-    .ref_cite_list {margin-top:20px; float:right; }
-    .ref_cite_list_opt { height: 50px; width:250px; text-indent:10px; font-size:20px;}
-
-
+        
+        .sub_con img {display:block; max-width: 100%;}
+            
+        
+        
+        .tit_ment_img {display:block; margin:0 auto;}
+        .page_tit {color:gray; text-align: center; margin:10px;}
+          
+        
+        .red_notice {color:rgb(240, 89, 89); text-indent:10px;}
+        .page { display:none; }
+        .page:target { display:block; }
+    
+    
 </style>
 </head>
 
 <body>
+    <script>
+        $(document).ready(function(){
+            $(".lnb ul li").click(function(){
+                $(".lnb ul li").removeClass("act");
+                $(this).addClass("act");
+            });
+            $(".sub > li").click(function(){
+                $(".lnb ul li").removeClass("act");
+                var t = $(this).index();
+                $(".lnb ul li").eq(t).addClass("act");
+            });
+        });    
+    </script>
     <div class="container">
         <header class="hd">
             <div class="hd_wrap">
@@ -480,360 +504,75 @@
                 </div>
             </nav>           
         </header>
-        <div class="content">
+        <div class="content fix">
+            <figure class="vs" id="vs">
+                <!-- 배경 이미지로 채움 -->
+                <p class="vs_tit">환경부 소개</p>
+            </figure>
             <div class="content_wrap">
-                <div class="figure_vs">
-                    <ul class="img_box bx-slider">
-                        <li>
-                            <a href="">
-                                <img src="./img/visual_1.jpg" class="vs_img" alt="메인이미지1">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="./img/visual_2.jpg" class="vs_img" alt="메인이미지2">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="./img/visual_3.jpg" class="vs_img" alt="메인이미지3">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="./img/visual_4.jpg" class="vs_img" alt="메인이미지4">
-                            </a>
-                        </li>
-                    </ul>
-                    <script>
-                        $(function(){
-                            $(".bx-slider").bxSlider({
-                                auto:true, //자동 슬라이딩
-                                speed:400,  //한 슬라이딩 속도
-                                pause:4000, //한 이미지 슬라이딩 후 지연속도
-                                mode:'horizontal', //슬라이딩 효과(fade, horizontal, vertical)
-                                autoControls:false, //시작,중지 버튼 추가 및 활성화
-                                pager:true, //페이징 버튼 만들기
-                                infiniteLoop:true
-                            });
-                        });    
-                    </script>
-                </div>
-                <div class="ico_menu">
-                    <ul class="ico_list">
-                        <li class="ico1">
-                            <div class="ico"><a href=""><img src="./ico/main_icon04.png" alt="소식지"></a></div>
-                            <div class="ico_desc">
-                                <a href="">
-                                    <p class="tit">소식지</p>
-                                    <p class="sub_tit">more &gt;</p>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="ico2">
-                            <div class="ico"><a href=""><img src="./ico/main_icon06.png" alt="조직도"></a></div>
-                            <div class="ico_desc">
-                                <a href="">
-                                    <p class="tit">조직도</p>
-                                    <p class="sub_tit">more &gt;</p>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="ico3">
-                            <div class="ico"><a href=""><img src="./ico/main_icon03.png" alt="부서찾기"></a></div>
-                            <div class="ico_desc">
-                                <a href="">
-                                    <p class="tit">부서찾기</p>
-                                    <p class="sub_tit">more &gt;</p>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="ico4">
-                            <div class="ico"><a href=""><img src="./ico/main_icon01.png" alt="찾아오시는 길"></a></div>
-                            <div class="ico_desc">
-                                <a href="">
-                                    <p class="tit">오시는길</p>
-                                    <p class="sub_tit">more &gt;</p>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="ico5">
-                            <div class="ico"><a href=""><img src="./ico/main_icon02.png" alt="질의응답"></a></div>
-                            <div class="ico_desc">
-                                <a href="">
-                                    <p class="tit">질의응답</p>
-                                    <p class="sub_tit">more &gt;</p>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="ico6">
-                            <div class="ico"><a href=""><img src="./ico/main_icon05.png" alt="예산안내"></a></div>
-                            <div class="ico_desc">
-                                <a href="">
-                                    <p class="tit">예산안내</p>
-                                    <p class="sub_tit">more &gt;</p>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="sub_slide owl-carousel owl-theme">
-                    <a href="">
-                        <div class="sub_img_tit">
-                            <img src="./img/subslide1.png" alt="국민과 함께하는 적극행정">
-                            <p class="sub_img_tit"></p>
-                            <p class="sub_img_subtit"></p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="sub_img_tit">
-                            <img src="./img/subslide2.png" alt="한눈에 보는 민원 빅데이터">
-                            <p class="sub_img_tit"></p>
-                            <p class="sub_img_subtit"></p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="sub_img_tit">
-                            <img src="./img/subslide3.png" alt="녹색회복과 탄소중립">
-                            <p class="sub_img_tit"></p>
-                            <p class="sub_img_subtit"></p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="sub_img_tit">
-                            <img src="./img/subslide4.png" alt="수도용 자재 및 제품 인증취소 현황">
-                            <p class="sub_img_tit"></p>
-                            <p class="sub_img_subtit"></p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="sub_img_tit">
-                            <img src="./img/subslide5.png" alt="대한민국 2050 탄소중립">
-                            <p class="sub_img_tit"></p>
-                            <p class="sub_img_subtit"></p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="sub_img_tit">
-                            <img src="./img/subslide6.png" alt="우수환경산업체 15社">
-                            <p class="sub_img_tit"></p>
-                            <p class="sub_img_subtit"></p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="sub_img_tit">
-                            <img src="./img/subslide7.png" alt="환경부의 30년 계획">
-                            <p class="sub_img_tit"></p>
-                            <p class="sub_img_subtit"></p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="sub_img_tit">
-                            <img src="./img/subslide8.png" alt="탄소중립도시">
-                            <p class="sub_img_tit"></p>
-                            <p class="sub_img_subtit"></p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="sub_img_tit">
-                            <img src="./img/subslide9.png" alt="탄소중립 생활 실천 안내서">
-                            <p class="sub_img_tit"></p>
-                            <p class="sub_img_subtit"></p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="sub_img_tit">
-                            <img src="./img/subslide10.png" alt="2021 정보공개 종합평가 최우수기관 환경부">
-                            <p class="sub_img_tit"></p>
-                            <p class="sub_img_subtit"></p>
-                        </div>
-                    </a>
-                </div>
-                <script>
-                    $(function(){
-                        $(".owl-carousel").owlCarousel({
-                            autoplay:true,  //자동 실행
-                            loop:true,   //순환 반복
-                            margin:15,   //아이템간 여백
-                            mouseDrag:true, //마우스 드래그 허용
-                            dots:true,  //번호별 버튼 추가
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                600:{
-                                    items:3
-                                },
-                                1000:{
-                                    items:5
-                                }
-                            }
-                        });
-                    });    
-                </script>
-                <div class="informal_box">
-                    <div class="inform">
-                        <div class="inform_menu">
-                            <input type="radio" name="ra1" class="ra_item" id="ra1" checked>
-                            <input type="radio" name="ra2" class="ra_item" id="ra2">
-                            <ul class="inform_category_menu">
-                                <li class="item1"><label for="ra1">공지사항</label></li>
-                                <li class="item2"><label for="ra2">채용정보</label></li>
-                                <li class="more_item"><a href="">더보기</a></li>
-                            </ul>
-                            <ul class="menubar">
-                                <li class="hide_menu" id="menubar_item1">
-                                    <ul class="board_tit">
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">야생동물 보호시설 운영방침</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">요소수 정보공개</a>
-                                            <span class="regdate">2021-02-11</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">영산강 물관리종합계획</a>
-                                            <span class="regdate">2021-11-03</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">세계 물의날 기념행사 공고안내</a>
-                                            <span class="regdate">2021-12-01</span>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="hide_menu" id="menubar_item2">
-                                    <ul class="board_tit">
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">환경부 기획재정담당관실 1명 채용 공고</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">물관리위원회 전문연구원 채용공고</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">환경부 기획재정담당실 채용 완료</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">자원재활용부 채용 공고</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="inform">
-                        <div class="inform_menu">
-                            <input type="radio" name="ra3" class="ra_item" id="ra3" checked>
-                            <input type="radio" name="ra4" class="ra_item" id="ra4">
-                            <ul class="inform_category_menu">
-                                <li class="item1"><label for="ra3">공지사항</label></li>
-                                <li class="item2"><label for="ra4">채용정보</label></li>
-                                <li class="more_item"><a href="">더보기</a></li>
-                            </ul>
-                            <ul class="menubar">
-                                <li class="hide_menu" id="menubar_item3">
-                                    <ul class="board_tit">
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">환경부 기획재정담당관실 1명 채용 공고</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">물관리위원회 전문연구원 채용공고</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">환경부 기획재정담당실 채용 완료</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">자원재활용부 채용 공고</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="hide_menu" id="menubar_item4">
-                                    <ul class="board_tit">
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">환경부 기획재정담당관실 1명 채용 공고</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">물관리위원회 전문연구원 채용공고</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">환경부 기획재정담당실 채용 완료</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                        <li>
-                                            <img src="./ico/ico_inquick03.png" alt="게시판사진">
-                                            <a href="">자원재활용부 채용 공고</a>
-                                            <span class="regdate">2021-01-04</span>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="info_box">
-                        <div class="info_box_menu">
-                            <ul class="info_box_menu_item">
-                                <li><img src="./ico/ico_inquick01.png" alt="전구"><a href="">오시는길</a></li>
-                                <li><img src="./ico/ico_inquick02.png" alt="연락처수첩"><a href="">담당자 연락처</a></li>
-                                <li><img src="./ico/ico_inquick05.png" alt="편지"><a href="">국민생각함</a></li>
-                            </ul>
-                        </div>
-                        <div class="call_img">
-                            <img src="./ico/ico_inquick03.png" alt="확성기">
-                            <p class="telephone">환경부핫라인</p>
-                            <p class="phonenum">1577-8866</p>
-                        </div>
+                <div class="sub_box">
+                    <h2 class="sub_tit">기관소개</h2>
+                    <div class="bread_box">
+                        <h3 class="cate_tit"></h3>
+                        <p class="bread">
+                             <a href="index.html" class="home">홈</a> &gt;
+                             <a href="">기관소개</a> &gt;
+                             <a href="">찾아오시는 길</a>
+                         </p>
                     </div>
                 </div>
-                <div class="multiple_content">
-                    <div class="sns_bar">
-                        <ul class="sns_logo">
-                            <li><a href=""><img src="./ico/ico_sns_blog.png" alt="환경부 네이버 블로그"></a></li>
-                            <li><a href=""><img src="./ico/ico_sns_facebook.png" alt="환경부 페이스북"></a></li>
-                            <li><a href=""><img src="./ico/ico_sns_twitter.png" alt="환경부 트위터"></a></li>
-                            <li><a href=""><img src="./ico/ico_sns_youtube.png" alt="환경부 유튜브"></a></li>
-                            <li><a href=""><img src="./ico/ico_sns_instagram.png" alt="환경부 인스타그램"></a></li>
-                        </ul>
-                    </div>
-                    <div class="linklist">
-                        <div class="national">
-                            <img src="./ico/ico_fourlink04.png" alt="지도 마커">
-                            <a href="">지역본부 홈페이지</a>
-                        </div>
-                        <div class="ref_cite_list">
-                            <select onchange="if(this.value) window.open(this.value);" name="fac" id="fac_select" class="ref_cite_list_opt">
-                                <option value="http://www.kwater.or.kr/">한국수자원공사</option>
-                                <option value="https://www.knps.or.kr/">국립공원공단</option>
-                                <option value="http://www.nie.re.kr/">국립생태원</option>
-                                <option value="http://www.keco.or.kr/">한국환경공단</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+                <aside class="leftbar">
+                    <nav class="lnb">
+                        <ul>
+                            <li class="act"><a href="#page1">찾아오시는 길</a></li>
+                            <li><a href="#page2">층별안내</a></li>
+                            <li><a href="#page3">본부</a></li>
+                            <li><a href="#page4">외청</a></li>
+                        </ul>    
+                    </nav>
+                </aside>
+            </div>
+            <div class="page_box">
+                <section class="page" id="page1">
+                     <h2 class="page_tit">지도</h2>
+                     <div class="page_wrap">
+                         <div class="map_area">
+                             <!-- API 지도 삽입 -->
+                             <div id="map_canvas" style="width:60%;float:right; height:400px; margin:0px 200px;" >
+                         </div>
+                     </div>
+                </section>
+                <section class="page" id="page2">
+                    <h2 class="page_tit">층별안내</h2>
+                    <div class="page_wrap">
+                        <article class="map_area_desc">
+                            <ul class="4th_stairs">
+                                <li><img src="./img/stair_1.png" alt="1층지도"></li>
+                                <li>1층: 디지털소통팀, 정책홍보팀, 기자실</li>
+                                <li><img src="./img/stair_2.png" alt="2층지도"></li>
+                                <li>2층: 기록관, 회의실</li>
+                                <li><img src="./img/stair_3.png" alt="3층지도"></li>
+                                <li>3층:녹색전환정책과, 국토환경정책과</li>
+                                <li><img src="./img/stair_4.png" alt="4층지도"></li>
+                                <li>4층:자연공원관, 환경영향평가과</li>
+                            </ul>                                
+                         </article>
+                     </div>
+                </section>
+                <section class="page" id="page3">
+                    <h2 class="page_tit">자연과 함께하는 생태체험</h2>
+                    <div class="page_wrap">
+                        
+                        <img class="tit_ment_img" src="./img/tit_ment02.gif" alt="관광안내">
+                     </div>
+                </section>
+                <section class="page" id="page4">
+                    <h2 class="page_tit">독도와 함께하는 애국심 고취여행</h2>
+                    <div class="page_wrap">
+                        
+                        <img class="tit_ment_img" src="./img/tit_ment02.gif" alt="관광안내">
+                     </div>
+                </section>
             </div>
         </div>
         <footer class="ft">
