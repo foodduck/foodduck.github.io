@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>곽규석</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&
+    family=Noto+Sans+KR:wght@300&family=Noto+Sans+Mono:wght@300&family=Yusei+Magic&display=swap" rel="stylesheet">
+
+<style>
+    @font-face {
+        font-family: 'EliceDigitalBaeum_Bold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Bold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; font-family: 'Nanum Gothic', 'Yusei Magic', 'Noto Sans KR', sans-serif;}
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    img {display:block; position: absolute;}
+    .hd {width:100%; height:150px;}
+    .hd_wrap { width:1200px; margin:0 auto;}
+    .tnb {width:100%; height:30px; background-color: rgb(49, 48, 48); font-family: 'EliceDigitalBaeum_Bold'; }
+    .tnb_item li {font-size:14pt; color:white; float:right; margin-right:30px; font-size:16px;}
+    .hd_message {width:100%; height:200px; background-color: #34d;}
+    .gnb {width:100%; height:100px; background-color:#3a1;}
+    .gnb_top {width:100%; height:50px; background-color:rgb(255, 255, 255); }
+    .gnb_item li {float:left; width:25%; text-align: center; font-weight: 600;
+        color:rgb(55, 56, 58); font-size:24pt; height: 50px; font-family:'Yusei Magic'}
+    .gnb_item li:hover {text-decoration-line: underline; background-color: burlywood; cursor:pointer;}
+    
+    .gnb_bottom { width:100%; height:50px; background-color:rgb(255, 255, 255); border-top: solid black 1px;}
+    .gnb_folder {width:30px; height:30px; top:5px; left:15px;}
+    .skills_submenu {display:none;}
+    .skills_submenu li {float:left; position: relative; width:16.6667%; height:50px;
+        text-align: center; font-size:18px; line-height:250%; font-family: 'Noto sans mono'; cursor:pointer;}
+    .skills_submenu li:hover {text-decoration-line: underline; background-color: rgb(226, 200, 166); cursor:pointer;}
+
+    .content_wrap { clear:both; width: 1200px; margin:0 auto;}
+    .topside {clear:both; width:1200px; height:50px; background-color: darkgray;
+        text-align: center; }
+    .leftside {width:600px; height: 600px; float: left; background-color: rgb(228, 209, 133); position:relative;}
+    .rightside {width:600px; height: 600px; float: left; background-color: rgb(60, 100, 95); position:relative;}
+    .myimg {margin-top:20px;}
+    .intro_img {margin-left:25%;}
+    .skill_img {margin-left:25%;}
+    .portfolio_img {margin-left:15%;}
+    .mydesc {margin-left:25%; margin-top:50px; line-height: 200%;}
+    
+    .leftside ul li {display:none;}
+    .rightside ul li {display:none;}
+    
+
+    .breadcrumb {clear:both; width:1200px; height:50px; background-color: darkgray;
+        text-align: center; }
+    .breadcrumb h2 {width:100%; height:50px;}
+    .ft {width:100%; height:120px; clear:both;}
+    .ft_wrap {width:1200px; margin:0 auto; margin-top : 5px; border-top:solid 1px black;} 
+    .linkbar {margin-top:10px; height:50px; }
+    .linkbar img {width:50px; height:50px; left:40px;}
+    .linkbar li {float:left; position: relative; width:20%; height:50px;}
+    .copyright p {text-align:center; font-family: 'Nanum Gothic';}
+</style>
+<script>
+    $(document).ready(function(){
+
+        //gnb_top
+        $(".gnb_1").click(function(){
+            $(".desc_lists").css("display","none");
+            $("#item1 li, #item4 li").fadeIn(300).css("display","block");
+        });
+        $(".gnb_3").click(function(){
+            $(".desc_lists").css("display","none");
+            $(".skills_submenu").fadeIn(300).css("display","block");
+            $("#item2 li:first-of-type, #item5 li:first-of-type").fadeIn(300).css("display","block");
+        });
+
+        //gnb_bottom
+        $(".gnb_3_1").click(function(){
+            $(".desc_lists").fadeIn(300).css("display","none");
+            $("#item2_1, #item5_1").css("display","block");
+        });
+        $(".gnb_3_2").click(function(){
+            $(".desc_lists").fadeIn(300).css("display","none");
+            $("#item2_2, #item5_2").css("display","block");
+        });
+        $(".gnb_3_3").click(function(){
+            $(".desc_lists").fadeIn(300).css("display","none");
+            $("#item2_3, #item5_3").css("display","block");
+        });
+        $(".gnb_3_4").click(function(){
+            $(".desc_lists").fadeIn(300).css("display","none");
+            $("#item2_4, #item5_4").css("display","block");
+        });
+        $(".gnb_3_5").click(function(){
+            $(".desc_lists").fadeIn(300).css("display","none");
+            $("#item2_5, #item5_5").css("display","block");
+        });
+        $(".gnb_3_6").click(function(){
+            $(".desc_lists").fadeIn(300).css("display","none");
+            $("#item2_6, #item5_6").css("display","block");
+        });
+
+        // //breadcrumb
+        // $(".gnb_items").click(function(){
+        //     $("bread1").
+        // });
+
+        // $(".bread2").text(function(){
+        //     $("[bread]").attr("bread");
+        // });
+    });
+</script>
+</head>
+<body>
+    <div class="container">
+        <header class="hd">
+            <div class="hd_wrap">
+                <nav class="tnb">
+                    <ul class="tnb_item">
+                        <li>나의 상태: 구직 중</li>
+                        <li>마지막 수정: 2022-02-04</li>
+                    </ul>
+                </nav>
+                <div class="gnb">
+                    <nav class="gnb_top">
+                        <ul class="gnb_item">
+                            <li class="gnb_1 gnb_items">about me</li>
+                            <li class="gnb_2 gnb_items">Intro</li>
+                            <li class="gnb_3 gnb_items">Skills</li>
+                            <li class="gnb_4 gnb_items">Portfolio</li>
+                        </ul>
+                    </nav>
+                    <nav class="gnb_bottom">
+                        <ul class="skills_submenu">
+                            <li class="gnb_3_1"><img src="./img/gnb_folder.png" alt="폴더" class="gnb_folder">hardcoding</li>
+                            <li class="gnb_3_2"><img src="./img/gnb_folder.png" alt="폴더" class="gnb_folder">mvc2</li>
+                            <li class="gnb_3_3"><img src="./img/gnb_folder.png" alt="폴더" class="gnb_folder">java</li>
+                            <li class="gnb_3_4"><img src="./img/gnb_folder.png" alt="폴더" class="gnb_folder">spring</li>
+                            <li class="gnb_3_5"><img src="./img/gnb_folder.png" alt="폴더" class="gnb_folder">jQuery</li>
+                            <li class="gnb_3_6"><img src="./img/gnb_folder.png" alt="폴더" class="gnb_folder">jsp</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="content_wrap">
+                <article class="topside">
+                    <div class="advert">
+                        <p><a href="Contact Me! &gt; 게시판에 글 남기기"></a></p>
+                    </div>
+                </article>
+                <article class="leftside">
+                    <ul class="intro_img myimg" id="item1">
+                        <li class="desc_lists"><img src="./img/kks_2.jpg" alt="증명사진"></li>
+                    </ul>
+                    <ul class="skill_img myimg" id="item2">
+                        <li class="desc_lists" id="item2_1"><img src="http://placehold.it/300x300/333" alt="html5"></li>
+                        <li class="desc_lists" id="item2_2"><img src="http://placehold.it/300x300/433" alt="css3"></li>
+                        <li class="desc_lists" id="item2_3"><img src="http://placehold.it/300x300/533" alt="spring"></li>
+                        <li class="desc_lists" id="item2_4"><img src="http://placehold.it/300x300/633" alt="java"></li>
+                        <li class="desc_lists" id="item2_5"><img src="http://placehold.it/300x300/733" alt="jsp"></li>
+                        <li class="desc_lists" id="item2_6"><img src="http://placehold.it/300x300/833" alt="mybatis"></li>
+                    </ul>
+                    <ul class="portfolio_img myimg" id="item3">
+                        <li class="desc_lists"><img src="http://placehold.it/400x550/533" alt="project1"></li>
+                        <li class="desc_lists"><img src="http://placehold.it/400x550/633" alt="project2"></li>
+                        <li class="desc_lists"><img src="http://placehold.it/400x550/733" alt="project3"></li>
+                    </ul>
+                </article>
+                <article class="rightside">
+                    <ul class="intro_img_desc mydesc" id="item4">
+                        <li class="desc_lists" bread="introduce">이름: 곽규석</li>
+                        <li class="desc_lists">생년: 1998</li>
+                        <li class="desc_lists">희망 직종: backend 웹 개발자</li>
+                        <li class="desc_lists">희망 지역: 서울 및 경기</li>
+                        <li class="desc_lists">거주지: 고양시 일산동구 백석동</li>
+                    </ul>
+                    <ul class="skill_img_desc mydesc" id="item5">
+                        <li class="desc_lists" id="item5_1" bread="hardcoding">hardcoding 작성 영상</li>
+                        <li class="desc_lists" id="item5_2" bread="mvc2">mvc2  작성 영상</li>
+                        <li class="desc_lists" id="item5_3" bread="java">java 작성 영상</li>
+                        <li class="desc_lists" id="item5_4" bread="spring">spring 작성 영상</li>
+                        <li class="desc_lists" id="item5_5" bread="jquery">jQuery 작성 영상</li>
+                        <li class="desc_lists" id="item5_6" bread="jsp">jsp 작성 영상</li>
+                    </ul>
+                    <ul class="portfolio_img_desc mydesc" id="item6">
+                        <li class="desc_lists" bread="hardcoding_movie">날코딩 홈페이지 시연 영상</li>
+                        <li class="desc_lists" bread="mvc2_movie">mvc2 홈페이지 시연 영상</li>
+                        <li class="desc_lists" bread="spring_movie">spring 홈페이지 시연 영상</li>
+                    </ul>
+                </article>
+                <article class="breadcrumb">
+                    <h2><span class="bread1">about me</span> &gt; <span class="bread2">profile</span></h2>
+                </article>
+            </div>
+        </div>
+        <footer class="ft">
+            <div class="ft_wrap">
+                <ul class="linkbar">
+                    <li><a href="https://github.com/foodduck"><img src="./img/github.png" alt="github" class="linkbar_img"></a></li>
+                    <li><a href=""><img src="./img/youtube.png" alt="youtube" class="linkbar_img"></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+                <div class="copyright">
+                    <p>2022 kwak kyu seok All right reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
