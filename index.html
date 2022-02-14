@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta https-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>곽규석</title>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&
     family=Noto+Sans+KR:wght@300&family=Noto+Sans+Mono:wght@300&family=Yusei+Magic&display=swap" rel="stylesheet">
     
-    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBOkR6Houarq-r7Qipv24VXrejAPt6BTUc" ></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBOkR6Houarq-r7Qipv24VXrejAPt6BTUc" ></script>
     <script> 
     function initialize() {
     var myLatlng = new google.maps.LatLng(37.64380543361162, 126.78400607265215);
     var mapOptions = {
-        zoom: 17,           //지도 확대 배율
+        zoom: 17,        
         center: myLatlng
     }
 
@@ -23,7 +23,7 @@
     var marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
-        title: 'myHome'	  //레이블을 바꿔서 입력
+        title: 'myHome'	  
     });
     }
     google.maps.event.addDomListener(window, 'load', initialize);
@@ -61,19 +61,16 @@
     .content_wrap { clear:both; width: 1200px; margin:0 auto;}
     .topside {clear:both; width:1200px; height:50px; background-color: darkgray;
         text-align: center; }
-    .leftside {width:600px; height: 600px; float: left; background-color: rgb(228, 209, 133); position:relative;}
+    .leftside {width:600px; height: 600px; float: left; background-color: rgb(228, 209, 133); position:relative; text-align: center;}
     .rightside {width:600px; height: 600px; float: left; background-color: rgb(60, 100, 95); position:relative;}
-    .myimg {margin-top:20px;}
-    .aboutme_img {margin-left:15%;}
-    .intro_img {margin-left:25%;}
-    .skills_img {margin-left:25%;}
-    .portfolio_img {margin-left:15%;}
+    .myimg {width:500px; height:500px; margin:50px auto; display:none;}
+    
     .mydesc {margin-left:25%; margin-top:50px; line-height: 200%;}
     
     .leftside ul li {display:none;}
     .rightside ul li {display:none;}
-    
-    #map_canvas {width:400px; height:500px}
+    .mypic {border-radius: 15%; border:solid black 1px;}
+    #map_canvas {width:500px; height:500px}
 
     .breadcrumb {clear:both; width:1200px; height:50px; background-color: darkgray;
         text-align: center; }
@@ -95,36 +92,32 @@
 
         //gnb_top
         $(".gnb_1").click(function(){
-            $(".desc_lists").css("display","none");
-            $(".gnb_bottom ul").css("display","none");
+            $(".desc_lists, .gnb_bottom ul, .myimg").css("display","none");
             $("#intro_submenu").fadeIn(300).css("display","block");
-            $("#item1 li:first-of-type, #item5 li:first-of-type").fadeIn(300).css("display","block");
+            $("#item1, #item1 li:first-of-type, #item5 li:first-of-type").fadeIn(300).css("display","block");
         });
 
         $(".gnb_2").click(function(){
-            $(".desc_lists").css("display","none");
-            $(".gnb_bottom ul").css("display","none");
+            $(".desc_lists, .gnb_bottom ul, .myimg").css("display","none");
             $("#aboutme_submenu").fadeIn(300).css("display","block");
-            $("#item2 li:first-of-type, #item6 li:first-of-type").fadeIn(300).css("display","block");
+            $("#item2, #item2 li:first-of-type, #item6 li:first-of-type").fadeIn(300).css("display","block");
         });
         
         $(".gnb_3").click(function(){
-            $(".desc_lists").css("display","none");
-            $(".gnb_bottom ul").css("display","none");
+            $(".desc_lists, .gnb_bottom ul, .myimg").css("display","none");
             $("#skills_submenu").fadeIn(300).css("display","block");
-            $("#item3 li:first-of-type, #item7 li:first-of-type").fadeIn(300).css("display","block");
+            $("#item3, #item3 li:first-of-type, #item7 li:first-of-type").fadeIn(300).css("display","block");
         });
         
         $(".gnb_4").click(function(){
-            $(".desc_lists").css("display","none");
-            $(".gnb_bottom ul").css("display","none");
+            $(".desc_lists, .gnb_bottom ul, .myimg").css("display","none");
             $("#portfolio_submenu").fadeIn(300).css("display","block");
-            $("#item4 li:first-of-type, #item8 li:first-of-type").fadeIn(300).css("display","block");
+            $("#item4, #item4 li:first-of-type, #item8 li:first-of-type").fadeIn(300).css("display","block");
         });
 
         // gnb_bottom
 
-         $(".gnb_1_1").click(function(){
+        $(".gnb_1_1").click(function(){
             $(".desc_lists").fadeIn(300).css("display","none");
             $("#item1_1, #item5_1").css("display","block");
         });
@@ -225,14 +218,23 @@
         });
 
         //breadcrumb
+
         $(".gnb_item li").click(function(){
             var bread1 = $(this).text();
+            $(".bread1, .bread2").text("");
             $(".bread1").text(bread1);
         });
 
+        // empty 폴더 클릭 시 Portfolio 클릭
         $(".submenu li").click(function(){
             var bread2 = $(this).text();
-            $(".bread2").text(bread2);
+            if (bread2=="empty") {
+                alert("빈 폴더입니다.");
+                $(".gnb_4").click();
+            } else {
+                $(".bread2").text("");
+                $(".bread2").text(bread2);
+            }
         });
     });
 </script>
@@ -301,30 +303,28 @@
                     </div>
                 </article>
                 <article class="leftside">
-                    <ul class="aboutme_img myimg" id="item1">
-                        <li class="desc_lists" id="item1_1"><img src="https://placehold.it/400x550/533" alt="project1"></li>
-                        <li class="desc_lists" id="item1_2"><img src="https://placehold.it/400x550/633" alt="project2"></li>
-                        <li class="desc_lists" id="item1_3"><img src="https://placehold.it/400x550/733" alt="project3"></li>
+                    <ul class="intro_img myimg" id="item1">
+                        <li class="desc_lists" id="item1_1"><img src="http://placehold.it/400x550/633" alt="project2"></li>
+                        <li class="desc_lists" id="item1_2"><img src="http://placehold.it/400x550/633" alt="project2"></li>
+                        <li class="desc_lists" id="item1_3"><img src="http://placehold.it/400x550/633" alt="project2"></li>
                     </ul>
-                    <ul class="intro_img myimg" id="item2">
-                        <li class="desc_lists" id="item2_1"><img src="./img/kks_2.jpg" alt="증명사진"></li>
-
-                        <li class="desc_lists" id="item2_3">
-                            <div id="map_canvas"></div>
-                        </li>
+                    <ul class="aboutme_img myimg" id="item2">
+                        <li class="desc_lists" id="item2_1"><img src="./img/kks_2.jpg" alt="증명사진" class="mypic"></li>
+                        <li class="desc_lists" id="item2_2"><img src="http://placehold.it/400x550/633" alt="project2"></li>
+                        <li class="desc_lists" id="item2_3"><div id="map_canvas"></div></li>
                     </ul>
                     <ul class="skills_img myimg" id="item3">
-                        <li class="desc_lists" id="item3_1"><img src="https://placehold.it/300x300/333" alt="html5"></li>
-                        <li class="desc_lists" id="item3_2"><img src="https://placehold.it/300x300/433" alt="css3"></li>
-                        <li class="desc_lists" id="item3_3"><img src="https://placehold.it/300x300/533" alt="spring"></li>
-                        <li class="desc_lists" id="item3_4"><img src="https://placehold.it/300x300/633" alt="java"></li>
-                        <li class="desc_lists" id="item3_5"><img src="https://placehold.it/300x300/733" alt="jsp"></li>
-                        <li class="desc_lists" id="item3_6"><img src="https://placehold.it/300x300/833" alt="mybatis"></li>
+                        <li class="desc_lists" id="item3_1"><iframe width="500" height="500" src="https://www.youtube.com/embed/i1G8o0bQ78Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li class="desc_lists" id="item3_2"><img src="http://placehold.it/300x300/433" alt="css3"></li>
+                        <li class="desc_lists" id="item3_3"><img src="http://placehold.it/300x300/533" alt="spring"></li>
+                        <li class="desc_lists" id="item3_4"><img src="http://placehold.it/300x300/633" alt="java"></li>
+                        <li class="desc_lists" id="item3_5"><img src="http://placehold.it/300x300/733" alt="jsp"></li>
+                        <li class="desc_lists" id="item3_6"><img src="http://placehold.it/300x300/833" alt="mybatis"></li>
                     </ul>
                     <ul class="portfolio_img myimg" id="item4">
-                        <li class="desc_lists" id="item4_1"><img src="https://placehold.it/400x550/533" alt="project1"></li>
-                        <li class="desc_lists" id="item4_2"><img src="https://placehold.it/400x550/633" alt="project2"></li>
-                        <li class="desc_lists" id="item4_3"><img src="https://placehold.it/400x550/733" alt="project3"></li>
+                        <li class="desc_lists" id="item4_1"><img src="http://placehold.it/400x550/533" alt="project1"></li>
+                        <li class="desc_lists" id="item4_2"><img src="http://placehold.it/400x550/633" alt="project2"></li>
+                        <li class="desc_lists" id="item4_3"><img src="http://placehold.it/400x550/733" alt="project3"></li>
                     </ul>
                 </article>
                 <article class="rightside">
@@ -382,7 +382,7 @@
             <div class="ft_wrap">
                 <ul class="linkbar">
                     <li><a href="https://github.com/foodduck"><img src="./img/github.png" alt="github" class="linkbar_img"></a></li>
-                    <li><a href=""><img src="./img/youtube.png" alt="youtube" class="linkbar_img"></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCQJoiKtkHHDAbjykOEw5FAg"><img src="./img/youtube.png" alt="youtube" class="linkbar_img"></a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
