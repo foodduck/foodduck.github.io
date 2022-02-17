@@ -66,8 +66,9 @@
     .leftside {width:599px; height: 600px; float: left; position:relative; text-align: center; border-right:solid black 1px;}
     .rightside {width:599px; height: 600px; float: left; position:relative; border-left:solid black 1px;}
     .myimg {width:500px; height:500px; margin:50px auto; display:none;}
-    
-    .mydesc {margin-left:25%; margin-top:50px; line-height: 200%;}
+    .mypic {margin:0 auto;}
+    .skillspic {background-position: center center; width:500px; height:500px;}
+    .mydesc {margin-left:10%; margin-right:10%; margin-top:50px; line-height: 200%;}
     
     .leftside ul li {display:none;}
     .rightside ul li {display:none;}
@@ -105,7 +106,7 @@
     .pop_com { width: 500px; padding: 20px 0px; margin: 0 auto; text-align:center; font-family:'EliceDigitalBaeum_Bold'; font-size:24px;}
     .inner_btn { display:block; width:90px; margin:10px auto; 
     background-color: #333; color:#fff; text-align:center; 
-line-height: 36px; cursor:pointer; }
+    line-height: 36px; cursor:pointer; }
 </style>
 <script>
         
@@ -120,25 +121,25 @@ line-height: 36px; cursor:pointer; }
         $(".gnb_1").click(function(){
             $(".desc_lists, .gnb_bottom ul, .myimg").css("display","none");
             $("#intro_submenu").fadeIn(300).css("display","block");
-            $("#item1, #item1 li:first-of-type, #item5 li:first-of-type").fadeIn(300).css("display","block");
+            $("#item1, #item1 li:first-of-type, #item5, #item5 li:first-of-type").fadeIn(300).css("display","block");
         });
 
         $(".gnb_2").click(function(){
             $(".desc_lists, .gnb_bottom ul, .myimg").css("display","none");
             $("#aboutme_submenu").fadeIn(300).css("display","block");
-            $("#item2, #item2 li:first-of-type, #item6 li:first-of-type").fadeIn(300).css("display","block");
+            $("#item2, #item2 li:first-of-type, #item6, #item6 li:first-of-type").fadeIn(300).css("display","block");
         });
         
         $(".gnb_3").click(function(){
             $(".desc_lists, .gnb_bottom ul, .myimg").css("display","none");
             $("#skills_submenu").fadeIn(300).css("display","block");
-            $("#item3, #item3 li:first-of-type, #item7 li:first-of-type").fadeIn(300).css("display","block");
+            $("#item3, #item3 li:first-of-type, #item7, #item7 li:first-of-type").fadeIn(300).css("display","block");
         });
         
         $(".gnb_4").click(function(){
             $(".desc_lists, .gnb_bottom ul, .myimg").css("display","none");
             $("#portfolio_submenu").fadeIn(300).css("display","block");
-            $("#item4, #item4 li:first-of-type, #item8 li:first-of-type").fadeIn(300).css("display","block");
+            $("#item4, #item4 li:first-of-type, #item8, #item8 li:first-of-type").fadeIn(300).css("display","block");
         });
 
         // gnb_bottom
@@ -336,7 +337,7 @@ line-height: 36px; cursor:pointer; }
                     </ul>
                     <ul class="aboutme_img myimg" id="item2">
                         <li class="desc_lists" id="item2_1"><img src="./img/kks_2.jpg" alt="증명사진" class="mypic"></li>
-                        <li class="desc_lists" id="item2_2"><img src="https://placehold.it/400x550/633" alt="project2"></li>
+                        <li class="desc_lists" id="item2_2"><img src="./img/skills.jpg" alt="skills" class="skillspic"></li>
                         <li class="desc_lists" id="item2_3"><div id="map_canvas"></div></li>
                     </ul>
                     <ul class="skills_img myimg" id="item3">
@@ -373,7 +374,15 @@ line-height: 36px; cursor:pointer; }
                             <p>거주지: 고양시 일산동구 백석동</p>
                         </li>
                         <li class="desc_lists" id="item6_2">
-                            생년: 1998
+                            <h3>▶ 개발 환경 구축</h3>
+                            <p>- Java, Oracle, Apache Tomcat을 이용한 개발 환경 구축 및 Eclipse IDE, STS 의 환경 설정 가능</p>
+                            <h3>▶ 개발 언어</h3>
+                            <p>- Backend : Java, JSP, JQuery(Ajax) Frontend : HTML/CSS, JQuery</p>
+                            <p>- Java: 컬렉션 프레임워크를 이용한 객체 지향 프로그래밍 가능</p>
+                            <p>- JSP: Jstl, java bean, Scriptlet을 이용한 페이지 간 데이터 주고받기 가능</p>
+                            <p>- JQuery(Ajax): Ajax를 이용한 form 태그의 일부 컨트롤 요소를 DB와 주고받기 가능</p>
+                            <p>- HTML/CSS: 페이지(index, 게시판, 회원가입 등 )에 맞는 태그 설계 및 스타일 적용 가능</p>
+                            <p>- JQuery: JQuery를 이용한 외부 플러그인 이용 가능, jQueryUI를 이용한 effect 적용 가능</p>
                         </li>
                         <li class="desc_lists" id="item6_3">
                             <p>5분 거리의 백석역과 버스 정류장이 있습니다.</p>  
@@ -423,7 +432,7 @@ line-height: 36px; cursor:pointer; }
                 <ul class="linkbar">
                     <li><a href="https://github.com/foodduck"><img src="./img/github.png" alt="github" class="linkbar_img"></a></li>
                     <li><a href="https://www.youtube.com/channel/UCQJoiKtkHHDAbjykOEw5FAg"><img src="./img/youtube.png" alt="youtube" class="linkbar_img"></a></li>
-                    <li><a href=""></a></li>
+                    <li><a href="https://www.jobkorea.co.kr"><img src="./img/jobkorea.svg" alt="youtube" class="linkbar_img"></a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                 </ul>
